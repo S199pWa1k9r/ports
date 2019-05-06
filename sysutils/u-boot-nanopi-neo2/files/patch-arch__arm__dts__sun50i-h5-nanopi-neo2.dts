@@ -1,0 +1,36 @@
+--- arch/arm/dts/sun50i-h5-nanopi-neo2.dts.orig	2018-12-04 09:32:56.268793000 +0300
++++ arch/arm/dts/sun50i-h5-nanopi-neo2.dts	2018-12-04 09:34:27.539097000 +0300
+@@ -62,13 +62,13 @@
+ 		compatible = "gpio-leds";
+ 
+ 		pwr {
+-			label = "nanopi:green:pwr";
++			label = "nanopi:red:pwr";
+ 			gpios = <&r_pio 0 10 GPIO_ACTIVE_HIGH>;
+ 			default-state = "on";
+ 		};
+ 
+ 		status {
+-			label = "nanopi:blue:status";
++			label = "nanopi:green:status";
+ 			gpios = <&pio 0 10 GPIO_ACTIVE_HIGH>;
+ 		};
+ 	};
+@@ -108,7 +108,7 @@
+ &ehci3 {
+ 	status = "okay";
+ };
+-
++/*
+ &emac {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&emac_rgmii_pins>;
+@@ -124,7 +124,7 @@
+ 		reg = <7>;
+ 	};
+ };
+-
++*/
+ &mmc0 {
+ 	vmmc-supply = <&reg_vcc3v3>;
+ 	bus-width = <4>;
