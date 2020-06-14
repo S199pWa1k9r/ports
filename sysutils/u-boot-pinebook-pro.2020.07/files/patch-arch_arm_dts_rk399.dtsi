@@ -1,0 +1,28 @@
+arch/arm/dts/rk3399.dtsi: Fix vopl endpoints
+
+According to the vopb node, the eDP endpoint is at index 0, not 1. 
+Fix the vopl node to reflect that.
+
+Signed-off-by: Arnaud Patard <arnaud.patard@rtp-net.org>
+Index: u-boot/arch/arm/dts/rk3399.dtsi
+===================================================================
+--- arch/arm/dts/rk3399.dtsi.orig
++++ arch/arm/dts/rk3399.dtsi
+@@ -1492,13 +1492,13 @@
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
+ 
+-			vopl_out_mipi: endpoint@0 {
+-				reg = <0>;
++			vopl_out_mipi: endpoint@1 {
++				reg = <1>;
+ 				remote-endpoint = <&mipi_in_vopl>;
+ 			};
+ 
+-			vopl_out_edp: endpoint@1 {
+-				reg = <1>;
++			vopl_out_edp: endpoint@0 {
++				reg = <0>;
+ 				remote-endpoint = <&edp_in_vopl>;
+ 			};
+ 

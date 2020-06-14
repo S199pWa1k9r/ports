@@ -1,0 +1,20 @@
+--- arch/arm/dts/rk3399-pinebook-pro-u-boot.dtsi.orig	2020-06-12 18:53:33.000000000 +0000
++++ arch/arm/dts/rk3399-pinebook-pro-u-boot.dtsi	2020-06-13 15:35:59.094651000 +0000
+@@ -12,8 +12,16 @@
+ 	};
+ 
+ 	chosen {
+-		u-boot,spl-boot-order = "same-as-spl", &sdhci, &sdmmc;
++		u-boot,spl-boot-order = "same-as-spl", &sdhci, &spiflash, &sdmmc;
+ 	};
++
++	config {
++		u-boot,spl-payload-offset = <0x60000>; /* @ 384KB */
++	};
++};
++
++&edp {
++	rockchip,panel = <&edp_panel>;
+ };
+ 
+ &i2c0 {

@@ -1,0 +1,11 @@
+--- arch/arm/dts/rk3399-nanopc-t4-u-boot.dtsi.orig	2019-12-04 11:12:03 UTC
++++ arch/arm/dts/rk3399-nanopc-t4-u-boot.dtsi
+@@ -5,3 +5,8 @@
+ 
+ #include "rk3399-nanopi4-u-boot.dtsi"
+ #include "rk3399-sdram-lpddr3-samsung-4GB-1866.dtsi"
++/ {
++	chosen {
++		u-boot,spl-boot-order = "same-as-spl", &sdhci, &sdmmc;
++	};
++};

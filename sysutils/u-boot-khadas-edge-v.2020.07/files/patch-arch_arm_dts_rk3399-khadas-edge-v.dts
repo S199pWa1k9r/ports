@@ -1,0 +1,12 @@
+--- arch/arm/dts/rk3399-khadas-edge-v.dts.orig	2020-05-19 16:07:28.982856000 +0300
++++ arch/arm/dts/rk3399-khadas-edge-v.dts	2020-05-19 16:09:50.657527000 +0300
+@@ -23,5 +23,9 @@
+ &pcie0 {
+ 	ep-gpios = <&gpio1 RK_PA3 GPIO_ACTIVE_HIGH>;
+ 	num-lanes = <4>;
++	pinctrl-0 = <&pcie_clkreqnb_cpm>;
++	pinctrl-names = "default";
++	vpcie1v8-supply = <&vcc1v8_s3>;
++	vpcie3v3-supply = <&vcc3v3_pcie>;
+ 	status = "okay";
+ };
