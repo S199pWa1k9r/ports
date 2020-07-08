@@ -1,0 +1,10 @@
+--- /dev/null
++++ arch/arm/dts/rk3399pro-rock-pi-n10-u-boot.dtsi
+@@ -0,0 +1,7 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
++ */
++
++#include "rk3399pro-u-boot.dtsi"
++#include "rk3399-sdram-lpddr3-4GB-1600.dtsi"

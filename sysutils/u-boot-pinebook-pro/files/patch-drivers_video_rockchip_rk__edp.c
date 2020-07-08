@@ -1,5 +1,5 @@
---- drivers/video/rockchip/rk_edp.c.orig	2020-06-12 18:53:40.000000000 +0000
-+++ drivers/video/rockchip/rk_edp.c	2020-06-13 16:26:02.483290000 +0000
+--- drivers/video/rockchip/rk_edp.c.orig	2020-07-06 22:22:53.000000000 +0300
++++ drivers/video/rockchip/rk_edp.c	2020-07-08 09:53:12.971651000 +0300
 @@ -17,10 +17,19 @@
  #include <asm/gpio.h>
  #include <asm/io.h>
@@ -58,7 +58,7 @@
  
  	ret = clk_get_by_index(uc_plat->src_dev, 0, &clk);
  	if (ret >= 0) {
-@@ -1058,12 +1075,18 @@
+@@ -1058,13 +1075,21 @@
  		return ret;
  	}
  
@@ -67,18 +67,20 @@
  	rk_setreg(&priv->grf->soc_con12, 1 << 4);
  
  	/* select epd signal from vop0 or vop1 */
--	rk_setreg(&priv->grf->soc_con6, (vop_id == 1) ? (1 << 5) : (1 << 5));
-+	rk_clrsetreg(&priv->grf->soc_con6, (1 << 5), (vop_id == 1) ? (1 << 5) : (0 << 5));
+ 	rk_clrsetreg(&priv->grf->soc_con6, (1 << 5),
+ 	    (vop_id == 1) ? (1 << 5) : (0 << 5));
 +#endif
  
 +#if defined(CONFIG_ROCKCHIP_RK3399)
 +	/* select epd signal from vop0 or vop1 */
-+	rk_clrsetreg(&priv->grf->soc_con20, (1 << 5), (vop_id == 1) ? (1 << 5) : (0 << 5));
++	rk_clrsetreg(&priv->grf->soc_con20, (1 << 5),
++	    (vop_id == 1) ? (1 << 5) : (0 << 5));
 +#endif
++
  	rockchip_edp_wait_hpd(priv);
  
  	rk_edp_init_refclk(regs);
-@@ -1084,6 +1107,7 @@
+@@ -1085,6 +1110,7 @@
  
  static const struct udevice_id rockchip_dp_ids[] = {
  	{ .compatible = "rockchip,rk3288-edp" },

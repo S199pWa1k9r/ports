@@ -7,8 +7,8 @@ PORTNAME=	u-boot
 PORTVERSION=	${UBOOT_VERSION}
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-${MODEL}
-MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
 MASTER_SITES=   http://dev.kubsu.ru/khadas/
+MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
 DIST_SUBDIR=	u-boot
 
 MAINTAINER?=	uboot@FreeBSD.org
@@ -105,6 +105,14 @@ UBOOT_METADATA_ARMADA38X_FILES=		${UBOOT_PLIST_ARMADA38X}
 UBOOT_METADATA_ARMADA38X_METHOD=	raw
 UBOOT_METADATA_ARMADA38X_RAW_OFFSET=	1
 UBOOT_METADATA_ARMADA38X_RAW_BS=	512
+
+# Override for A311D family
+UBOOT_PLIST_A311D=	u-boot.bin
+UBOOT_ARCH_A311D=	aarch64
+
+# Override for S905 family
+UBOOT_PLIST_S905=	u-boot.bin
+UBOOT_ARCH_S905=	aarch64
 
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})

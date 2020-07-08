@@ -1,6 +1,5 @@
 #
-
-MASTERDIR=      ${.CURDIR}/../u-boot-2019.10
+MASTERDIR=      ${.CURDIR}/../u-boot-2020.07
 
 MODEL=		rock-pi-4
 BOARD_CONFIG=	rock-pi-4-rk3399_defconfig
