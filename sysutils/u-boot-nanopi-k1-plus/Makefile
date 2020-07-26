@@ -2,7 +2,7 @@
 
 MAINTAINER=	s199p.wa1k9r@gmail.com
 
-MASTERDIR=	${.CURDIR}/../u-boot-2018.09
+MASTERDIR=	${.CURDIR}/../u-boot-2020.07
 
 MODEL=		nanopi-k1-plus
 BOARD_CONFIG=	nanopi_k1_plus_defconfig

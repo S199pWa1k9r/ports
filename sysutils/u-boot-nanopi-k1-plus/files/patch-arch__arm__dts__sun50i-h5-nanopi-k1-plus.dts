@@ -131,7 +131,7 @@
 +	status = "okay";
 +};
 +
-+/* &emac {
++&emac {
 +	pinctrl-names = "default";
 +	pinctrl-0 = <&emac_rgmii_pins>;
 +	phy-supply = <&reg_gmac_3v3>;
@@ -147,10 +147,10 @@
 +		reg = <0x0>;
 +	};
 +};
-+*/
++
 +&uart0 {
 +	pinctrl-names = "default";
-+	pinctrl-0 = <&uart0_pins_a>;
++	pinctrl-0 = <&uart0_pa_pins>;
 +	status = "okay";
 +};
 +

@@ -35,7 +35,7 @@
 +	"ll=0; " \
 +	"test $ll = 1 && bmp display $loadaddr m m || ll=0 "
 +
-+#define PREBOOT_CMD "run load_logo;"
++#define PREBOOT_CMD "led red:standby on; run load_logo;"
 +
  #define CONFIG_EXTRA_ENV_SETTINGS \
  	ENV_MEM_LAYOUT_SETTINGS \
