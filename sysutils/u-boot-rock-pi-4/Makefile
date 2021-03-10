@@ -15,7 +15,7 @@ EXTRA_PATCHES=	${.CURDIR}/files/
 .include "${MASTERDIR}/Makefile"
 
 post-build:
-	mkimage -n rk3399 -T rkspi -d ${WRKSRC}/tpl/u-boot-tpl.bin:${WRKSRC}/spl/u-boot-spl.bin\
+	mkimage -n rk3399 -T rkspi -d ${WRKSRC}/tpl/u-boot-tpl.bin:${WRKSRC}/spl/u-boot-spl.bin \
 		${WRKSRC}/${UBOOT_SPI} >/dev/null && cat /dev/null
 	truncate -s ${UBOOT_SPI_PAYLOAD} ${WRKSRC}/${UBOOT_SPI}
 	cat ${WRKSRC}/u-boot.itb >> ${WRKSRC}/${UBOOT_SPI}
