@@ -18,9 +18,9 @@
 +#ifdef ROCKCHIP_DEVICE_SETTINGS
 +#undef ROCKCHIP_DEVICE_SETTINGS
 +#define ROCKCHIP_DEVICE_SETTINGS \
-+	"stdin=serial\0" \
-+	"stdout=serial\0" \
-+	"stderr=serial\0"
++	"stdin=serial,usbkbd\0" \
++	"stdout=serial,vidconsole\0" \
++	"stderr=serial,vidconsole\0"
 +#endif
 +#endif
 +
@@ -35,7 +35,7 @@
 +	"ll=0; " \
 +	"test $ll = 1 && bmp display $loadaddr m m || ll=0 "
 +
-+#define PREBOOT_CMD "run load_logo;"
++#define PREBOOT_CMD "usb start; run load_logo;"
 +
  #define CONFIG_EXTRA_ENV_SETTINGS \
  	ENV_MEM_LAYOUT_SETTINGS \

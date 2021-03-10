@@ -90,11 +90,11 @@ UBOOT_METADATA_IMX6_RAW_OFFSET=	2
 UBOOT_METADATA_IMX6_RAW_BS=	512
 
 # Override for RK3328 family
-UBOOT_PLIST_RK3328=	idbloader.img u-boot.itb
+UBOOT_PLIST_RK3328?=	idbloader.img u-boot.itb
 UBOOT_ARCH_RK3328=	aarch64
 
 # Override for RK3399 family
-UBOOT_PLIST_RK3399=	idbloader.img u-boot.itb
+UBOOT_PLIST_RK3399?=	idbloader.img u-boot.itb
 UBOOT_ARCH_RK3399=	aarch64
 
 # Override for ARMADA38X family
@@ -103,14 +103,6 @@ UBOOT_METADATA_ARMADA38X_FILES=		${UBOOT_PLIST_ARMADA38X}
 UBOOT_METADATA_ARMADA38X_METHOD=	raw
 UBOOT_METADATA_ARMADA38X_RAW_OFFSET=	1
 UBOOT_METADATA_ARMADA38X_RAW_BS=	512
-
-# Override for A311D family
-UBOOT_PLIST_A311D=	u-boot.bin
-UBOOT_ARCH_A311D=	aarch64
-
-# Override for S905 family
-UBOOT_PLIST_S905=	u-boot.bin
-UBOOT_ARCH_S905=	aarch64
 
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})

@@ -1,0 +1,24 @@
+--- arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi.orig	2020-10-05 18:15:32.000000000 +0300
++++ arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi	2021-01-21 18:38:39.284963000 +0300
+@@ -8,7 +8,20 @@
+ 
+ / {
+ 	chosen {
+-		u-boot,spl-boot-order = "same-as-spl", &sdhci, &sdmmc;
++		u-boot,spl-boot-order = "same-as-spl", &spiflash, &sdhci, &sdmmc;
++	};
++
++	aliases {
++		spi0 = &spi1;
++	};
++
++};
++
++&spi1 {
++	status = "okay";
++
++	spiflash: flash@0 {
++		u-boot,dm-pre-reloc;
+ 	};
+ };
+ 
