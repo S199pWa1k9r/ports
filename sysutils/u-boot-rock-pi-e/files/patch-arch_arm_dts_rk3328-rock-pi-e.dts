@@ -1,6 +1,6 @@
 --- arch/arm/dts/rk3328-rock-pi-e.dts.orig	2020-07-06 22:22:53.000000000 +0300
 +++ arch/arm/dts/rk3328-rock-pi-e.dts	2020-07-09 15:12:51.906797000 +0300
-@@ -1,260 +1,439 @@
+@@ -1,260 +1,438 @@
 -// SPDX-License-Identifier: GPL-2.0+
  /*
 - * (C) Copyright 2020 Radxa
@@ -208,13 +208,12 @@
 +&gmac2phy {
 +	phy-supply = <&vcc_phy>;
 +	clock_in_out = "output";
-+	assigned-clocks = <&cru SCLK_MAC2PHY_SRC>;
-+	assigned-clock-rate = <50000000>;
-+	assigned-clocks = <&cru SCLK_MAC2PHY>;
-+	assigned-clock-parents = <&cru SCLK_MAC2PHY_SRC>;
++	assigned-clocks = <&cru SCLK_MAC2PHY>, <&cru SCLK_MAC2PHY_SRC>;
++	assigned-clock-rate = <0>, <50000000>;
++	assigned-clock-parents = <&cru SCLK_MAC2PHY_SRC>, <&cru PLL_GPLL>;
  	status = "okay";
  };
- 
+
  &gmac2io {
 -	assigned-clocks = <&cru SCLK_MAC2IO>, <&cru SCLK_MAC2IO_EXT>;
 -	assigned-clock-parents = <&gmac_clkin>, <&gmac_clkin>;
