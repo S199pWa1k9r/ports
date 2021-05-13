@@ -1,0 +1,33 @@
+--- /dev/null	2021-04-06 21:00:40.069198000 +0300
++++ arch/arm/dts/rk3399pro-rock-pi-n10-u-boot.dtsi	2021-04-06 20:59:09.400047000 +0300
+@@ -0,0 +1,30 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
++ */
++
++#include "rk3399-u-boot.dtsi"
++#include "rk3399-sdram-lpddr3-4GB-1600.dtsi"
++
++/ {
++	chosen {
++		u-boot,spl-boot-order = "same-as-spl", &spiflash, &sdhci, &sdmmc;
++	};
++
++	aliases {
++		spi0 = &spi1;
++	};
++};
++
++&spi1 {
++	status = "okay";
++
++	spiflash: flash@0 {
++		u-boot,dm-pre-reloc;
++	};
++
++};
++
++&vdd_log {
++	regulator-init-microvolt = <950000>;
++};

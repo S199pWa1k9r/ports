@@ -1,0 +1,20 @@
+--- arch/arm/dts/rk3399-sdram-ddr3-1866.dtsi.orig	2020-07-06 22:22:53.000000000 +0300
++++ arch/arm/dts/rk3399-sdram-ddr3-1866.dtsi	2021-04-17 08:23:09.097493000 +0300
+@@ -4,7 +4,9 @@
+  */
+ 
+ &dmc {
+-        rockchip,sdram-params = <
++	ddr3-1866 {
++	u-boot,dm-pre-reloc;
++	rockchip,sdram-params = <
+ 		0x1
+ 		0xa
+ 		0x3
+@@ -1536,5 +1538,5 @@
+ 		0x01010000
+ 		0x00000000
+ 	>;
++	};
+ };
+-

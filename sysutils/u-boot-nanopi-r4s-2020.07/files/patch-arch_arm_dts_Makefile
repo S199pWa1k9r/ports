@@ -1,0 +1,10 @@
+--- arch/arm/dts/Makefile.orig	2021-01-28 10:22:18.075273000 +0300
++++ arch/arm/dts/Makefile	2021-01-28 10:22:44.745791000 +0300
+@@ -133,6 +133,7 @@
+ 	rk3399-nanopi-m4.dtb \
+ 	rk3399-nanopi-m4-2gb.dtb \
+ 	rk3399-nanopi-neo4.dtb \
++	rk3399-nanopi-r4s.dtb \
+ 	rk3399-orangepi.dtb \
+ 	rk3399-pinebook-pro.dtb \
+ 	rk3399-puma-haikou.dtb \

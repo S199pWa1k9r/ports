@@ -1,0 +1,22 @@
+--- arch/arm/mach-rockchip/rk3399/Kconfig.orig	2020-07-06 22:22:53.000000000 +0300
++++ arch/arm/mach-rockchip/rk3399/Kconfig	2021-04-17 08:22:36.425806000 +0300
+@@ -107,6 +107,11 @@
+ 	   * wide voltage input(5V-15V), dual cell battery
+ 	   * Wifi/BT accessible via expansion board M.2
+ 
++config TARGET_NANOPI4
++	bool "FriendlyElec NanoPi 4 Series"
++	help
++	  Support for FriendlyElec boards based on RK3399.
++
+ endchoice
+ 
+ config ROCKCHIP_BOOT_MODE_REG
+@@ -150,6 +155,7 @@
+ endif # BOOTCOUNT_LIMIT
+ 
+ source "board/firefly/roc-pc-rk3399/Kconfig"
++source "board/friendlyarm/nanopi4/Kconfig"
+ source "board/google/gru/Kconfig"
+ source "board/pine64/pinebook-pro-rk3399/Kconfig"
+ source "board/pine64/rockpro64_rk3399/Kconfig"

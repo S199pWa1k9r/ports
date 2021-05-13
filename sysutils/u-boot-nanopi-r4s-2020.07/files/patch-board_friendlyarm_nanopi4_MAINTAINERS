@@ -1,0 +1,9 @@
+--- /dev/null
++++ board/friendlyarm/nanopi4/MAINTAINERS	2021-04-17 08:22:36.427091000 +0300
+@@ -0,0 +1,6 @@
++NanoPi 4 Series
++M:      <support@friendlyarm.com>
++S:      Maintained
++F:      board/friendlyarm/nanopi4/
++F:      include/configs/nanopi4.h
++F:      configs/nanopi4_defconfig

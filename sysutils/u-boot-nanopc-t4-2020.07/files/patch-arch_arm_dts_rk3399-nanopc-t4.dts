@@ -1,0 +1,60 @@
+--- arch/arm/dts/rk3399-nanopc-t4.dts.orig	2020-07-06 22:22:53.000000000 +0300
++++ arch/arm/dts/rk3399-nanopc-t4.dts	2021-04-16 19:29:37.197656000 +0300
+@@ -94,8 +94,19 @@
+ 	};
+ };
+ 
++&hdmi {
++	ddc-i2c-bus = <&i2c7>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&hdmi_cec>;
++	status = "okay";
++};
++
++&hdmi_sound {
++	status = "okay";
++};
++
+ &pcie0 {
+-	num-lanes = <4>;
++	num-lanes = <4>;
+ 	vpcie3v3-supply = <&vcc3v3_sys>;
+ };
+ 
+@@ -121,6 +132,31 @@
+ 	phy-supply = <&vcc5v0_host0>;
+ };
+ 
++&usb_host0_ehci {
++        status = "okay";
++};
++
++&usb_host0_ohci {
++        status = "okay";
++};
++
++&usb_host1_ehci {
++        status = "okay";
++};
++
++&usb_host1_ohci {
++        status = "okay";
++};
++
++&usbdrd3_0 {
++        status = "okay";
++};
++
++&usbdrd_dwc3_0 {
++        status = "okay";
++        dr_mode = "host";
++};
++
+ &vcc5v0_sys {
+ 	vin-supply = <&vcc12v0_sys>;
+ };
+@@ -134,3 +170,4 @@
+ 	gpios = <&gpio4 RK_PD2 GPIO_ACTIVE_HIGH>;
+ 	vin-supply = <&vcc5v0_sys>;
+ };
++

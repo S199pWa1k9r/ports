@@ -147,6 +147,8 @@ UBOOT_MOVE=${UBOOT_MOVE_${FAMILY:tu}}
 .if defined(FAMILY) && ${FAMILY} == allwinner64
 BUILD_DEPENDS+=	${LOCALBASE}/share/atf-sun50i_a64/bl31.bin:sysutils/atf-sun50i_a64
 MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-sun50i_a64/bl31.bin
+#BUILD_DEPENDS+=	${LOCALBASE}/share/atf-allwinner/bl31.bin:sysutils/atf-allwinner
+#MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-allwinner/bl31.bin
 .endif
 
 .if defined(FAMILY) && ${FAMILY} == rk3328

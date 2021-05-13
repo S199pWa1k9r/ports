@@ -1,0 +1,18 @@
+--- /dev/null
++++ board/friendlyarm/nanopi4/Kconfig	2021-04-17 08:22:36.426580000 +0300
+@@ -0,0 +1,15 @@
++if TARGET_NANOPI4
++
++config SYS_BOARD
++	default "nanopi4"
++
++config SYS_VENDOR
++	default "friendlyarm"
++
++config SYS_CONFIG_NAME
++	default "nanopi4"
++
++config BOARD_SPECIFIC_OPTIONS
++	def_bool y
++
++endif

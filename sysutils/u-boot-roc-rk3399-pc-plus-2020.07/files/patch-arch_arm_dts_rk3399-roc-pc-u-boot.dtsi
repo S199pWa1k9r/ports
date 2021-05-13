@@ -1,0 +1,22 @@
+--- arch/arm/dts/rk3399-roc-pc-u-boot.dtsi.orig	2021-01-25 10:55:26.672558000 +0300
++++ arch/arm/dts/rk3399-roc-pc-u-boot.dtsi	2021-01-25 10:58:55.134297000 +0300
+@@ -15,6 +15,10 @@
+ 		u-boot,spl-boot-order = "same-as-spl", &spi_flash, &sdhci, &sdmmc;
+ 	};
+ 
++	aliases {
++		spi0 = &spi1;
++	};
++
+ 	config {
+ 		u-boot,spl-payload-offset = <0x60000>; /* @ 384KB */
+ 	};
+@@ -45,6 +49,8 @@
+ };
+ 
+ &spi1 {
++	status = "okay";
++
+ 	spi_flash: flash@0 {
+ 		u-boot,dm-pre-reloc;
+ 	};

@@ -1,0 +1,3 @@
+pkg install -y gmake bison gsed swig dtc u-boot-tools python37 dialog4ports py37-pyelftools
+pkg install -y atf-rk3399 atf-rk3328 atf-sun50i_a64
+pkg install -y aarch64-none-elf-gcc 

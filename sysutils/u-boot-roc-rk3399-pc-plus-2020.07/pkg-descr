@@ -1,0 +1,15 @@
+U-Boot loader and related files for the 
+
+ROC-RK3399-PC/Renegade Elite/Firefly Station-P1
+
+To install this bootloader on an sdcard just do:
+dd if=/usr/local/share/u-boot/u-boot-roc-rk3399-pc-plus/idbloader.img of=/path/to/sdcarddevice seek=64
+dd if=/usr/local/share/u-boot/u-boot-roc-rk3399-pc-plus/u-boot.itb of=/path/to/sdcarddevice seek=16384 conv=sync
+
+To install this bootloader on an SPI flash just do:
+
+=> load mmc 0 ${kernel_addr_r} u-boot-spi.bin
+=> sf probe
+=> sf update ${kernel_addr_r} 0 ${filesize}
+
+WWW: https://www.denx.de/wiki/U-Boot

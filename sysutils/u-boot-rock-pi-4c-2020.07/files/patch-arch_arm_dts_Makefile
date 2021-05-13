@@ -1,0 +1,10 @@
+--- arch/arm/dts/Makefile.orig	2021-05-01 00:46:23.371364000 +0300
++++ arch/arm/dts/Makefile	2021-05-01 00:47:12.259315000 +0300
+@@ -135,6 +135,7 @@
+ 	rk3399-roc-pc.dtb \
+ 	rk3399-roc-pc-mezzanine.dtb \
+ 	rk3399-rock-pi-4.dtb \
++	rk3399-rock-pi-4c.dtb \
+ 	rk3399-rock960.dtb \
+ 	rk3399-rockpro64.dtb
+ 

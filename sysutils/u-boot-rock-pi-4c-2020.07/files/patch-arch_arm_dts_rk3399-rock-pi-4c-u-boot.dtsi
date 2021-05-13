@@ -1,0 +1,48 @@
+--- /dev/null	2021-04-30 22:43:33.168446000 +0300
++++ arch/arm/dts/rk3399-rock-pi-4c-u-boot.dtsi	2021-04-30 22:42:12.689610000 +0300
+@@ -0,0 +1,45 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
++ * Copyright (C) 2021 Sleep Walker <s199p.wa1k9r@gmail.com>
++ */
++
++#include "rk3399-u-boot.dtsi"
++#include "rk3399-sdram-lpddr4-100.dtsi"
++
++/ {
++	chosen {
++		u-boot,spl-boot-order = "same-as-spl", &spiflash, &sdmmc, &sdhci;
++	};
++
++	config {
++		u-boot,spl-payload-offset = <0x60000>; /* @ 384KB */
++	};
++
++	aliases {
++		spi0 = &spi1;
++	};
++
++};
++
++&spi1 {
++	status = "okay";
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <10000000>;
++	};
++};
++
++&spi1 {
++	status = "okay";
++
++	spiflash: flash@0 {
++		u-boot,dm-pre-reloc;
++	};
++};
++
++&vdd_log {
++	regulator-init-microvolt = <950000>;
++};

@@ -1,0 +1,12 @@
+--- /dev/null	2021-04-17 08:37:41.123461000 +0300
++++ arch/arm/dts/rk3399-nanopi-r4s-u-boot.dtsi	2021-04-17 08:23:24.947201000 +0300
+@@ -0,0 +1,9 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
++ */
++
++#include "rk3399-nanopi4-u-boot.dtsi"
++#include "rk3399-sdram-lpddr4-100.dtsi"
++#include "rk3399-sdram-lpddr3-samsung-4GB-1866.dtsi"
++#include "rk3399-sdram-ddr3-1866.dtsi"

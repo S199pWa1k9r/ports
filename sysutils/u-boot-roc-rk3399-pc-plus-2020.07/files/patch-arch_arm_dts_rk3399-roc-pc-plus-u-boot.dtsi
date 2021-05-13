@@ -1,0 +1,9 @@
+--- /dev/null	2020-12-19 21:21:44.257213000 +0300
++++ arch/arm/dts/rk3399-roc-pc-plus-u-boot.dtsi	2020-12-19 21:18:17.884035000 +0300
+@@ -0,0 +1,6 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (c) 2020 Amarula Solutions(India)
++ */
++
++#include "rk3399-roc-pc-u-boot.dtsi"
